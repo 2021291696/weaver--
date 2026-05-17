@@ -68,13 +68,6 @@ Copy-Item -Recurse weaver-evolve/ "$env:USERPROFILE\.claude\skills\weaver-自我
 | L2 适中 | L1 + 可逆写入（git commit、Write、Edit、测试） | 有经验 |
 | L3 宽松 | L2 + 网络/删除（git push、npm install、rm） | 高级用户 |
 
-## 关联项目
-
-- [file-tidy](https://github.com/2021291696/file-tidy) — 文件系统整理 skill，weaver 在全局整理时调用进行物理文件归类
-- [memory-keeper](https://github.com/2021291696/memory-keeper) — 即时记忆管理 skill，weaver 的分层归档遵循其融入 8 条原则
-- [debug-architect](https://github.com/2021291696/debug-architect) — 错误复盘 skill，与 weaver 的经验模式识别互补（weaver 在正常运行中发现模式，debug-architect 在故障后复盘）
-- [skill-bootstrapper](https://github.com/2021291696/skill-bootstrapper) — skill 创建编排器，本 skill 经其 eval 通道创建
-
 ## 文件结构
 
 ```
