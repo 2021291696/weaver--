@@ -248,6 +248,7 @@ neat-freak 负责**单个项目内部**的知识卫生（项目 CLAUDE.md + docs
 - **孤立条目**：有没有文件只剩一条内容？→ 考虑合并到上级文件，减少碎片。
 - **结构优化**：同一层同类记忆超过 3 条分散在不同文件？→ 在摘要中建议"要不要合并？"（不强制）。
 - **文件系统整理**：调用 `file-tidy` skill（`Skill` 工具，skill 名 `file-tidy`，args 为 `--dry-run --dir <项目根目录>`），扫描项目根目录的散乱文件。将 file-tidy 输出的 before/after 树嵌入第五步变更摘要的"文件系统整理"段落。用户确认后，再次调用 `file-tidy`（args 为 `--confirm --dir <项目根目录>`）执行实际整理。
+- **错误复盘**：调用 `debug-architect` skill（`Skill` 工具，skill 名 `debug-architect`），扫描增量 sessions 中的报错信号，分析根因并生成预防建议。将结果嵌入第五步变更摘要的"错误复盘"段落。
 
 ### 第四步：自检清单
 
@@ -269,6 +270,7 @@ neat-freak 负责**单个项目内部**的知识卫生（项目 CLAUDE.md + docs
 - [ ] 主动扫描过期内容已完成：死链接、已删除项目、过时配置已列入"建议删除"
 - [ ] "建议删除"项已展示给用户确认
 - [ ] 文件系统整理已完成（调用了 file-tidy，结果在摘要中展示）
+- [ ] 错误复盘已完成（调用了 debug-architect，结果在摘要中展示）
 
 **质量：**
 - [ ] 无相对时间（`grep -E "今天|昨天|最近|刚刚|上周"` 在所有改动的文件中清零）
@@ -327,6 +329,10 @@ neat-freak 负责**单个项目内部**的知识卫生（项目 CLAUDE.md + docs
 ### 文件系统整理
 
 [file-tidy 输出的 before/after 树]
+
+### 错误复盘
+
+[debug-architect 输出的错误分析结果]
 
 ### 记忆画像更新
 - [关联] lab3 MySQL 编码问题 ↔ project1 bat 编码问题 — 根因相同：Windows GBK
