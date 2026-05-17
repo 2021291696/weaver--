@@ -1,4 +1,4 @@
-# global-tidy — 全局知识库整理 Skill
+# weaver-自我迭代 — 全局知识库整理 Skill
 
 跨项目记忆分层归位、全局配置审查、权限白名单优化、历史对话提炼。定期使用，非高频。
 
@@ -10,11 +10,11 @@
 - 权限弹窗越来越多，打断工作流
 - 全局配置积累过期内容
 
-global-tidy 定期扫描历史对话，把信息按正确层级归档：**全局的归全局，项目的归项目，子项目的归子项目**。
+weaver 定期扫描历史对话，把信息按正确层级归档：**全局的归全局，项目的归项目，子项目的归子项目**。
 
 ## 与 neat-freak 的关系
 
-| | neat-freak | global-tidy |
+| | neat-freak | weaver |
 |------|------------|-------------|
 | 范围 | 单项目内部 | 跨项目全局 |
 | 关注 | 项目 docs/ + CLAUDE.md + memory | 多项目间信息分配 + 全局配置 + 权限 |
@@ -30,6 +30,7 @@ global-tidy 定期扫描历史对话，把信息按正确层级归档：**全局
 3. **权限审查** — 分析权限弹窗，生成三级白名单建议
 4. **分层归档** — 按全局/项目/子项目归位到正确位置
 5. **自检验证** — 逐项检查分层正确性、完整性、质量
+6. **文件整理** — 调用 [file-tidy](https://github.com/2021291696/file-tidy) 归类散乱文件，dry-run 预览后确认执行
 
 ## 安装
 
@@ -37,17 +38,17 @@ global-tidy 定期扫描历史对话，把信息按正确层级归档：**全局
 
 ```powershell
 # 克隆仓库
-git clone https://github.com/2021291696/global-tidy.git
+git clone https://github.com/2021291696/weaver-evolve.git
 
 # 复制到 Claude Code skills 目录
-Copy-Item -Recurse global-tidy/ "$env:USERPROFILE\.claude\skills\global-tidy"
+Copy-Item -Recurse weaver-evolve/ "$env:USERPROFILE\.claude\skills\weaver-自我迭代"
 ```
 
 ## 使用
 
 ```
 # 命令
-/global-tidy
+/weaver
 
 # 或说
 "全局整理"
@@ -67,10 +68,17 @@ Copy-Item -Recurse global-tidy/ "$env:USERPROFILE\.claude\skills\global-tidy"
 | L2 适中 | L1 + 可逆写入（git commit、Write、Edit、测试） | 有经验 |
 | L3 宽松 | L2 + 网络/删除（git push、npm install、rm） | 高级用户 |
 
+## 关联项目
+
+- [file-tidy](https://github.com/2021291696/file-tidy) — 文件系统整理 skill，weaver 在全局整理时调用进行物理文件归类
+- [memory-keeper](https://github.com/2021291696/memory-keeper) — 即时记忆管理 skill，weaver 的分层归档遵循其融入 8 条原则
+- [debug-architect](https://github.com/2021291696/debug-architect) — 错误复盘 skill，与 weaver 的经验模式识别互补（weaver 在正常运行中发现模式，debug-architect 在故障后复盘）
+- [skill-bootstrapper](https://github.com/2021291696/skill-bootstrapper) — skill 创建编排器，本 skill 经其 eval 通道创建
+
 ## 文件结构
 
 ```
-global-tidy/
+weaver-自我迭代/
 ├── SKILL.md                  — 主指令（六模块）
 ├── README.md                 — 本文件
 └── references/
